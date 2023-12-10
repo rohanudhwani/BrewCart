@@ -28,8 +28,11 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-          packages.add(new ReanimatedPackage());
-          packages.add(new RNScreensPackage());
+          packages.add(new com.swmansion.rnscreens.RNScreensPackage());
+          //My Metro told me that RNGestureHandlerPackage is created twice, hence I comment the line, and then everything works.
+          // packages.add(new com.swmansion.gesturehandler.RNGestureHandlerPackage());
+          packages.add(new com.th3rdwave.safeareacontext.SafeAreaContextPackage());
+          packages.add(new com.swmansion.reanimated.ReanimatedPackage());
 
           return packages;
         }
